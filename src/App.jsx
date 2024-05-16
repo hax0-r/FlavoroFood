@@ -1,5 +1,5 @@
 import './App.css'
-import CategoryMenu from './Components/CategoryMenu'
+import Cart from './Components/Cart'
 import Navbar from './Components/Navbar'
 import Router from './Routers/Router'
 
@@ -9,7 +9,7 @@ function App() {
     <>
       <Navbar />
       <Router />
-      <CategoryMenu />
+      <Cart/>
     </>
   )
 }
