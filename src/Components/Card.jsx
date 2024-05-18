@@ -20,7 +20,7 @@ const Card = ({ img, name, price, desc, rating, id }) => {
                         *
                         <p className='font-semibold'>{rating}</p>
                     </div>
-                    <button onClick={() => { dispatch(addToCart({ id, name, price,rating, qty: 1 })) }} className='bg-gray-200 px-3 py-2 rounded-md border-gray-200 border-2 transition duration-[200ms] hover:bg-transparent hover:text-gray-500'>Add to cart</button>
+                    <button onClick={() => { dispatch(addToCart({ id, name, price, img, rating, qty: 1 })) }} className='bg-gray-200 px-3 py-2 rounded-md border-gray-200 border-2 transition duration-[200ms] hover:bg-transparent hover:text-gray-500'>Add to cart</button>
                 </div>
             </div>
         </>

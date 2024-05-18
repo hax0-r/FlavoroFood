@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import CartItem from './CartItem'
+import { useSelector } from 'react-redux';
 
 const Cart = () => {
 
     const [isActiveCart, setIsActiveCart] = useState(false)
-    console.log("isActiveCart", isActiveCart);
+    const cartItem = useSelector((state) => state.cart.cart)
 
     return (
         <>
@@ -14,7 +15,11 @@ const Cart = () => {
                         <h1 className='text-2xl font-semibold '>My Order</h1>
                         <h2 className='font-bold p-1 cursor-pointer' onClick={() => { setIsActiveCart(!isActiveCart) }}>X</h2>
                     </div>
-                    <CartItem />
+                    {
+                        cartItem.length > 0 ? cartItem.map(({ img, name, price, qty },index) => (
+                            <CartItem img={img} name={name} price={price} key={index} qty={qty} />
+                        )) : <h1>No Item</h1>
+                    }
                 </div>
                 <div className='flex flex-col gap-3 '>
                     <h1>Items : </h1>
